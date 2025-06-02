@@ -1,0 +1,21 @@
+name: local-chatbot
+channels:
+  - conda-forge
+  - defaults
+dependencies:
+  - python=3.10
+  - pip
+  - faiss-cpu
+  - sentence-transformers
+  - huggingface_hub
+  - gcc
+  - gxx
+  - libstdcxx-ng
+  - pip:
+      - langchain
+      - langchain-community
+      - langchain-huggingface
+      - llama-cpp-python==0.2.57
+      - unstructured[md]
+      - langchain-unstructured
+
