@@ -12,6 +12,7 @@ sys.path.insert(0, os.path.abspath('..'))  # so 'chat.py' is in the path
 extensions = [
     'sphinx.ext.autodoc',
     'sphinx.ext.napoleon',
+    'sphinx_autodoc_typehints',  # optional, if you want type hints shown nicely
 ]
 
 project = 'chatfrecli'
