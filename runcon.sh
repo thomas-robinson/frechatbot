@@ -14,4 +14,6 @@ conda deactivate
 conda remove -n local-chatbot --all --yes
 conda env create -f environment.yml
 #conda activate local-chatbot
+CMAKE_ARGS="-DLLAMA_CUBLAS=on" FORCE_CMAKE=1 \
+pip install --no-cache-dir --force-reinstall llama-cpp-python
 #python chat.py

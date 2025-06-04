@@ -5,17 +5,18 @@ channels:
 dependencies:
   - python=3.10
   - pip
+  - pytorch
   - faiss-cpu
-  - sentence-transformers
-  - huggingface_hub
-  - gcc
-  - gxx
-  - libstdcxx-ng
+  - numpy<2.0  # <--- Fix FAISS compatibility issue
   - pip:
       - langchain
       - langchain-community
       - langchain-huggingface
-      - llama-cpp-python==0.2.57
-      - unstructured[md]
       - langchain-unstructured
-
+      - llama-cpp-python==0.2.24
+      - sentence-transformers
+      - unstructured[local-inference,pdf,ppt,image,docx]
+      - python-magic
+      - pypandoc
+      - beautifulsoup4
+      - torch

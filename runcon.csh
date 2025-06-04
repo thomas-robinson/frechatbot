@@ -13,5 +13,6 @@ module load miniforge
 conda deactivate
 conda remove -n local-chatbot --all --yes
 conda env create -f environment.yml
-#conda activate local-chatbot
-#python chat.py
+conda activate local-chatbot
+
+python chat.py
