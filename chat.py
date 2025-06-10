@@ -178,6 +178,8 @@ def main() -> None:
 
         logging.info("🧠 Loading local LLaMA model...")
         try:
+            n_oscores = os.cpu_count()
+            n_oscores = n_oscores if n_oscores is not None else 0
             llm = LlamaCpp(
                 model_path=args.model_path,
                 temperature=0.4,
@@ -185,7 +187,7 @@ def main() -> None:
                 top_p=1,
                 n_ctx=4096,
                 verbose=False,
-                n_threads=max(1, os.cpu_count() // 4),  # Use half of CPU cores to avoid oversubscription
+                n_threads=max(1, n_oscores // 4),  # Use half of CPU cores to avoid oversubscription
             )
         except Exception as e:
             logging.error(f"❌ Failed to load LLaMA model: {e}")
